@@ -1,4 +1,7 @@
+
 #!/usr/bin/python
+from itertools import islice
+
 import os
 
 path = "input"
@@ -18,5 +21,16 @@ os.chdir( '..' )
 # Check current working directory.
 curr_directory = os.getcwd()
 
-print curr_directory
-print file_list
+#print curr_directory
+#print file_list
+
+
+N = 5 # number of lines
+for file_name in file_list:
+	with open("input/" + file_name, 'r') as myfile:
+	    head = [next(myfile) for x in xrange(N)]
+	#print head
+
+	with open("output/" + file_name, 'w+') as outfile:
+		for item in head:
+		  outfile.write("%s" % item)

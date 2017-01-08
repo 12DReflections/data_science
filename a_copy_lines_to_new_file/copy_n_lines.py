@@ -1,4 +1,3 @@
-from itertools import islice
 
 
 N = 5 # number of lines
